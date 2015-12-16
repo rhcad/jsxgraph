@@ -526,7 +526,9 @@ define([
                     node2 = this._createArrowHead(el, 'End');
                     this.defs.appendChild(node2);
                     el.rendNodeTriangleStart = node2;
-                    el.rendNode.setAttributeNS(null, 'marker-start', 'url(#' + this.container.id + '_' + el.id + 'TriangleEnd)');
+                    if (!this.isIE) {
+                      el.rendNode.setAttributeNS(null, 'marker-start', 'url(#' + this.container.id + '_' + el.id + 'TriangleEnd)');
+                    }
                 } else {
                     this.defs.appendChild(node2);
                 }
@@ -542,7 +544,9 @@ define([
                     node2 = this._createArrowHead(el, 'Start');
                     this.defs.appendChild(node2);
                     el.rendNodeTriangleEnd = node2;
-                    el.rendNode.setAttributeNS(null, 'marker-end', 'url(#' + this.container.id + '_' + el.id + 'TriangleStart)');
+                    if (!this.isIE) {
+                      el.rendNode.setAttributeNS(null, 'marker-end', 'url(#' + this.container.id + '_' + el.id + 'TriangleStart)');
+                    }
                 } else {
                     this.defs.appendChild(node2);
                 }
